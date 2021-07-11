@@ -1,0 +1,24 @@
+
+{% extends 'blog_post/base.html' %}
+{% load static %}
+
+{% block title %}
+  Blog - {{ object.title }}
+{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 card mb-4  mt-3 left  top">
+      <div class="card-body">
+        <h1>{{ object.title }}</h1>
+        <p class=" text-muted">{{ article.author }} | {{ article.created_on }}</p>
+        <p class="card-text ">{{ object.content | safe }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'blog_post/base.html' %}
+{% load static %}
+
+
+{% block title %}
+  Blog - All Blogs
+{% endblock %}
+
+{% block body %}
+
+{% include 'blog_post/carousel.html' %}
+
+<div class="container">
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8 mt-3 left">
+            {% for article in article_list %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">{{ article.title }}</h2>
+                    <p class="card-text text-muted h6">{{ article.author }} | {{ article.created_on}} </p>
+                    <p class="card-text">{{article.content|slice:":200" }}</p>
+                    <a href="{% url 'blog_post:article_detail' article.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

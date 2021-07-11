@@ -1,0 +1,21 @@
+body {
+	font-family: verdana, arial;
+}
+
+ul {
+	list-style-type: none;
+	background-color: yellow!important;
+	overflow: hidden;
+}
+
+ul li {
+	float: right;
+	margin: 5px 25px;
+	padding-right: 25px;
+}
+
+ul li a {
+	text-decoration: none;
+	font-size: 18px;
+}
+

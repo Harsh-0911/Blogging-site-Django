@@ -1,0 +1,18 @@
+{% extends 'user_accounts/base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+	Register for account
+{% endblock %}
+
+{% block body %}
+	<div class="container my-4">
+		<form method="POST" action="{% url 'user_accounts:register' %}" autocomplete="off">
+		{% csrf_token %}
+		{{ form|crispy }}
+		<button type="submit" class="btn btn-success my-4">Register</button>
+		</form>
+	</div>
+{% endblock %}
+
